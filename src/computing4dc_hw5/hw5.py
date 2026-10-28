@@ -85,7 +85,7 @@ class Deck:
     VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
     def __init__(self):
-        self.cards: [Card(suit, value) for suit in self.SUITS for value in self.VALUES]
+        self.cards = [Card(suit, value) for suit in self.SUITS for value in self.VALUES]
 
     def shuffle(self):
         """Shuffle the cards randomly (in place)."""
@@ -96,7 +96,7 @@ class Deck:
         if not self.cards:
             print("The Deck is empty")
             return None
-        card: self.cards.pop()
+        card = self.cards.pop()
         print(f"{card.value} of {card.suit}")
         return card
 
