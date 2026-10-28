@@ -79,8 +79,26 @@ class Card:
 # Create a method called "draw" that will draw a single card and print the suit and value. When a card is drawn, the card should be removed from the deck.
 
 class Deck:
-    
+    """An English deck of 52 cards."""
 
+    SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
+    VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+    def __init__(self):
+        self.cards: [Card(suit, value) for suit in self.SUITS for value in self.VALUES]
+
+    def shuffle(self):
+        """Shuffle the cards randomly (in place)."""
+        random.shuffle(self.cards)
+
+    def draw(self):
+        """Draw one card, print its suit and value and remove it from the deck."""
+        if not self.cards:
+            print("The Deck is empty")
+            return None
+        card: self.cards.pop()
+        print(f"{card.value} of {card.suit}")
+        return card
 
 ###################
 
