@@ -1,5 +1,6 @@
 import math
 from abc import ABCMeta, abstractmethod
+import random
 
 ###########################################
 
@@ -76,7 +77,6 @@ class Patient:
                 prob = prob + 0.1
         return prob
 
-
 ######################
 
 # 2. In this exercise you will make an English Deck class made of Card classes
@@ -89,10 +89,7 @@ class Patient:
 # The constructor (__init__ ) should have two parameters the "suit" and the "value" of the card.
 # The class should store both as attributes.
 
-import random
-
 class Card:
-    """A single card of an English deck."""
 
     def __init__(self, suit, value):
         self.suit = suit
@@ -107,7 +104,6 @@ class Card:
 # Create a method called "draw" that will draw a single card and print the suit and value. When a card is drawn, the card should be removed from the deck.
 
 class Deck:
-    """An English deck of 52 cards."""
 
     SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
     VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
