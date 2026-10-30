@@ -89,12 +89,44 @@ class Patient:
 # The constructor (__init__ ) should have two parameters the "suit" and the "value" of the card.
 # The class should store both as attributes.
 
+import random
+
+class Card:
+    """A single card of an English deck."""
+
+    def __init__(self, suit, value):
+        self.suit = suit
+        self.value = value
+
+    def __repr__(self):
+        return f"{self.value} of {self.suit}"
 
 # 2.2) Create a Deck class called "Deck".
 # The constructor will create an English Deck (suits: Hearts, Diamonds, Clubs, Spades and values: A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K). It will create a list of cards that contain each of the existing cards in an English Deck.
 # Create a method called "shuffle" that shuffles the cards randomly.
 # Create a method called "draw" that will draw a single card and print the suit and value. When a card is drawn, the card should be removed from the deck.
 
+class Deck:
+    """An English deck of 52 cards."""
+
+    SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
+    VALUES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+    def __init__(self):
+        self.cards = [Card(suit, value) for suit in self.SUITS for value in self.VALUES]
+
+    def shuffle(self):
+        """Shuffle the cards randomly (in place)."""
+        random.shuffle(self.cards)
+
+    def draw(self):
+        """Draw one card, print its suit and value and remove it from the deck."""
+        if not self.cards:
+            print("The Deck is empty")
+            return None
+        card = self.cards.pop()
+        print(f"{card.value} of {card.suit}")
+        return card
 
 ###################
 
