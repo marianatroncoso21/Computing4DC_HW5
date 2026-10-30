@@ -1,7 +1,7 @@
 [project]
 name = "computing4dc-hw5"
 version = "0.1.0"
-description = "Add your description here"
+description = "OOP library to predict diabetes mellitus"
 readme = "README.md"
 authors = [
     { name = "Mariana Troncoso", email = "70819289+marianatroncoso21@users.noreply.github.com" }
