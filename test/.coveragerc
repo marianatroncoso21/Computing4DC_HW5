@@ -1,0 +1,7 @@
+[run]
+omit =
+    src/computing4dc_hw5/features/*
+    src/computing4dc_hw5/loading/*
+    src/computing4dc_hw5/modeling/*
+    src/computing4dc_hw5/preprocessing/*
+    src/computing4dc_hw5/src/*
